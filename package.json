@@ -2,7 +2,7 @@
   "name": "emojion",
   "version": "0.0.1",
   "description": "Emoji-fy your text",
-  "main": "main.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhued/emojion.git"
@@ -14,6 +14,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "node-emoji": "^1.4.1"
+    "angular": "^1.3.11",
+    "express": "^4.7.4",
+    "node-emoji": "^1.4.1",
+    "morgan" : "^1.1.1"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
   }
 }
