@@ -1,0 +1,19 @@
+{
+  "name": "emojion",
+  "version": "0.0.1",
+  "description": "Emoji-fy your text",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhued/emojion.git"
+  },
+  "author": {
+    "name": "Edward Zhu",
+    "email": "edward.r.zhu@gmail.com",
+    "url": "edwardzhu.me"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "node-emoji": "^1.4.1"
+  }
+}
