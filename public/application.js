@@ -2,10 +2,14 @@ var app = angular.module('myApp', []);
 
 app.controller('emojiCtrl', function($scope, $http) {
     $scope.inputRaw = "dog was here";
-    $http.get('/api/emojify/' + $scope.inputRaw)
-      .then(function(response) {
-        $scope.emojifyOut = response.data;
+
+    $scope.emojify = function(value) {
+      $http.get('/api/emojify/' + $scope.inputRaw)
+        .then(function(response) {
+          $scope.emojifyOut = response.data;
       });
+    };
+
 });
 
 // var emoji = require('node-emoji');

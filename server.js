@@ -1,5 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
+var emoji = require('node-emoji');
 
 var app = express();
 
@@ -11,7 +12,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/emojify/:input', function(req, res) {
-  res.send(req.params);
+  var input = req.params.input;
+  var emojiText = emoji.get(input);
+  res.send(emojiText);
 });
 
 app.listen(3000);
