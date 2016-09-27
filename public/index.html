@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js">
+<script src="//cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
 <body>
 
 <div ng-app="myApp" ng-controller="emojiCtrl">
@@ -9,7 +12,8 @@
   <input type="text" ng-model="inputRaw" ng-change="emojify(inputRaw)">
   <br>
   <pre>inputRaw line: {{inputRaw}}</pre>
-  <pre>Emoji-fy line: {{emojifyOut}}</pre>
+  <!-- <pre>Emoji-fy line: {{emojifyOut}}</pre> -->
+  <p ng-bind-html="emojifyOut"></p>
 </div>
 
 <script src="application.js"></script>

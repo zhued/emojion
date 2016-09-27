@@ -1,4 +1,5 @@
-var emoji = require('node-emoji');
+var nodeemoji = require('node-emoji');
+var emojione = require('emojione');
 
 module.exports = function(app){
 
@@ -9,18 +10,28 @@ module.exports = function(app){
   app.get('/api/emojify/:input', function(req, res) {
     var input = req.params.input;
     var ret = parse_line(input)
-    res.send(emoji.get(ret));
+    // document.getElementById('outputText').innerHTML = output;
+    res.send(ret);
   });
 
   function parse_line(line){
-    // var words = line.split(" ");
-    // var emojiText = [];
-    // for (var i = 0; i < words.length; i++) {
-    //   emojiText.push(emoji.get(words[i]));
-    // };
-    // res.send(emojiText.join(' '));
-    return line
+    var words = line.split(" ");
+    var emojiText = [];
+    for (var i = 0; i < words.length; i++) {
+      var output = findEmoji(words[i]);
+      emojiText.push(output);
+    };
+    var emoji = nodeemoji.get(line);
+
+
+    return emojiText.join(' ')
   };
+
+  function findEmoji(emojiShort){
+    var emoji = nodeemoji.get(emojiShort);
+    var output = emojione.toImage(emoji);
+    return output;
+  }
 
 };
 
