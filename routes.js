@@ -10,7 +10,6 @@ module.exports = function(app){
   app.get('/api/emojify/:input', function(req, res) {
     var input = req.params.input;
     var ret = parse_line(input)
-    // document.getElementById('outputText').innerHTML = output;
     res.send(ret);
   });
 
@@ -18,12 +17,9 @@ module.exports = function(app){
     var words = line.split(" ");
     var emojiText = [];
     for (var i = 0; i < words.length; i++) {
-      var output = findEmoji(words[i]);
-      emojiText.push(output);
+      emojiText.push(findEmoji(words[i]));
     };
     var emoji = nodeemoji.get(line);
-
-
     return emojiText.join(' ')
   };
 
