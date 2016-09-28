@@ -1,5 +1,6 @@
-var nodeemoji = require('node-emoji');
-var emojione = require('emojione');
+var nodeemoji = require('node-emoji'),
+    emojione = require('emojione'),
+    defineWord = require('define-word');
 
 module.exports = function(app){
 
@@ -21,7 +22,25 @@ module.exports = function(app){
     };
     var emoji = nodeemoji.get(line);
     return emojiText.join(' ')
+
+    // var def = getDefinition(words[0]);
+    // var def = getSynonyms(words[0]);
+    return def;
   };
+
+  function getDefinition(text){
+    var definit = require("define-word").define(text)
+    var buff = "";
+    buff += text + " is a " + definit.type + "\n"
+    for (var i = 0; i < definit.definitions.length; i++) {
+      buff += i + 1 + ". " + definit.definitions[i] + "\n"
+    }
+    return buff
+  }
+
+  function getSynonyms(text){
+    return defineWord.synonyms(text)
+  }
 
   function findEmoji(emojiShort){
     var emoji = nodeemoji.get(emojiShort);
