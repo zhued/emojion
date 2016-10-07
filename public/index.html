@@ -4,10 +4,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js">
 <script src="//cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
+<link rel="stylesheet" type="text/css" href="styles/main.css">
 <body>
 
 <div ng-app="myApp" ng-controller="emojiCtrl">
-  <p>Give me something to emojify!</p>
+  <h1>Give me something to emojify!</h1>
   Enter text and hit enter:
   <input type="text" ng-model="inputRaw" ng-change="emojify(inputRaw)">
   <br>
