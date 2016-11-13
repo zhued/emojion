@@ -9,5 +9,4 @@ app.controller('emojiCtrl', function($scope, $http) {
           $scope.emojifyOut = response.data;
       });
     };
-
 });
