@@ -1,6 +1,7 @@
 var nodeemoji = require('node-emoji'),
     emojione = require('emojione'),
-    defineWord = require('define-word');
+    defineWord = require('define-word'),
+    jsonDic = require('./lib/dictionary_library.json');;
 
 module.exports = function(app){
 
@@ -27,6 +28,10 @@ module.exports = function(app){
     // var def = getSynonyms(words[0]);
     return def;
   };
+
+  function getDictionary(text){
+
+  }
 
   function getDefinition(text){
     var definit = require("define-word").define(text)
